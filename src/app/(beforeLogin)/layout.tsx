@@ -1,9 +1,16 @@
-const BeforeLoginLayout = ({ children }) => {
+import { ReactNode } from "react";
+import styles from "@/app/page.module.css";
+
+type Props = {
+  children: ReactNode;
+  modal: ReactNode;
+};
+const BeforeLoginLayout = ({ children, modal }: Props) => {
   return (
-    <>
-      <p>비포 로그인 레이아웃</p>
+    <div className={styles.container}>
       {children}
-    </>
+      {modal}
+    </div>
   );
 };
 
