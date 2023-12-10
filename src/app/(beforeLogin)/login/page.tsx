@@ -1,10 +1,7 @@
 "use client";
 
-import { redirect, useRouter } from "next/navigation";
-import Image from "next/image";
-import styles from "@/app/page.module.css";
-import zLogo from "/public/zlogo.png";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Main from "@/app/(beforeLogin)/_component/Main";
 
 const LoginPage = () => {
   // server에서 리다이렉트
@@ -16,25 +13,7 @@ const LoginPage = () => {
 
   // 여기선 login에서 i/flow/login으로 리다이렉트 시켜주기 때문에 children은 login 이 되기에 메인이랑 동일한 코드를 넣어줌으로 써 동일하게 보이게 처리
 
-  return (
-    <>
-      <div className={styles.left}>
-        <Image src={zLogo} alt="logo" />
-      </div>
-      <div className={styles.right}>
-        <h1>지금 일어나고 있는 일</h1>
-        <h2>지금 가입하세요.</h2>
-        <Link href="/i/flow/signup" className={styles.signup}>
-          계정 만들기
-        </Link>
-        <h3>이미 트위터에 가입하셨나요?</h3>
-        <Link href="/login" className={styles.login}>
-          {/* <Link href="/i/flow/login" className={styles.login}> */}
-          로그인
-        </Link>
-      </div>
-    </>
-  );
+  return <Main />;
 };
 
 /**
